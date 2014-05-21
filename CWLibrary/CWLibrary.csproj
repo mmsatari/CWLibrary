@@ -42,7 +42,7 @@
     <Compile Include="HeaderChunk.cs" />
     <Compile Include="TextToMorse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextToMorseSysbols.cs" />
+    <Compile Include="TextToMorseSymbols.cs" />
     <Compile Include="WaveChunk.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

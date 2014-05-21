@@ -126,7 +126,7 @@ namespace CWLibrary
             short[] dash = GetDash();
             List<short> morseChar = new List<short>();
 
-            string morseSymbol = Characters.InternationalSymbols[character];
+            string morseSymbol = Characters.Symbols[character];
             for (int i = 0; i < morseSymbol.Length; i++)
             {
                 if (i > 0)
