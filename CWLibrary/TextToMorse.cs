@@ -124,9 +124,16 @@ namespace CWLibrary
             short[] space = GetInterEltSpace();
             short[] dot = GetDot();
             short[] dash = GetDash();
+            string morseSymbol = "";
             List<short> morseChar = new List<short>();
-
-            string morseSymbol = Characters.Symbols[character];
+            try
+            {
+                morseSymbol = Characters.Symbols[character];
+            }
+            catch (KeyNotFoundException ex)
+            {
+                morseSymbol = "";
+            }
             for (int i = 0; i < morseSymbol.Length; i++)
             {
                 if (i > 0)

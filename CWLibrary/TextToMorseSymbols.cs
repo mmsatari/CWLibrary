@@ -7,10 +7,6 @@ namespace CWLibrary
 
     public class TextToMorseSymbols
     {
-        public TextToMorseSymbols()
-        {
-        }
-
         // Returns a byte array in the Wave file format containing the given
         // text in morse code
         public string ConvertToMorse(string text)
@@ -22,7 +18,14 @@ namespace CWLibrary
         // Return a single character as a waveform
         private string GetCharacter(string character)
         {
-            return Characters.Symbols[character];
+            try
+            {
+                return Characters.Symbols[character];
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return "X";
+            }
         }
 
         // Return a word as a waveform
@@ -33,7 +36,7 @@ namespace CWLibrary
             for (int i = 0; i < word.Length; i++)
             {
                 if (i > 0)
-                    data += " ";
+                    data += "  ";
                 if (word[i] == '<')
                 {
                     // Prosign
@@ -65,7 +68,7 @@ namespace CWLibrary
             for (int i = 0; i < words.Length; i++)
             {
                 if (i > 0)
-                    data += " ";
+                    data += "  ";
                 data += GetWord(words[i]);
             }
 
